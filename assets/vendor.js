@@ -80076,7 +80076,7 @@ window.matchMedia || (window.matchMedia = function() {
 
   });
 });
-;define('ember-get-config/index', ['exports', 'ember-quickstart/config/environment'], function (exports, _environment) {
+;define('ember-get-config/index', ['exports', 'SpicyDragonsWebsite/config/environment'], function (exports, _environment) {
   'use strict';
 
   Object.defineProperty(exports, "__esModule", {

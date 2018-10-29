@@ -1087,6 +1087,6 @@ define('ember-quickstart/tests/unit/routes/home/team-test', ['ember-qunit'], fun
     assert.ok(route);
   });
 });
-require('ember-quickstart/tests/test-helper');
+require('SpicyDragonsWebsite/tests/test-helper');
 EmberENV.TESTS_FILE_LOADED = true;
 //# sourceMappingURL=tests.map

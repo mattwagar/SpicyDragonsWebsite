@@ -3920,8 +3920,8 @@ define('ember-quickstart/utils/clamp', ['exports', 'ember-paper/utils/clamp'], f
 });
 
 
-define('ember-quickstart/config/environment', ['ember'], function(Ember) {
-  var prefix = 'ember-quickstart';
+define('SpicyDragonsWebsite/config/environment', ['ember'], function(Ember) {
+  var prefix = 'SpicyDragonsWebsite';
 try {
   var metaName = prefix + '/config/environment';
   var rawConfig = document.querySelector('meta[name="' + metaName + '"]').getAttribute('content');
@@ -3940,6 +3940,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+760736b1"});
+  require("SpicyDragonsWebsite/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+760736b1"});
 }
 //# sourceMappingURL=ember-quickstart.map
