@@ -54,10 +54,16 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.locationType = 'hash';
-    ENV.rootURL = '/ember-quickstart/';
+    ENV.locationType = 'none';
+    // keep test console output quieter
+    ENV.APP.LOG_ACTIVE_GENERATION = false;
+    ENV.APP.LOG_VIEW_LOOKUPS = false;
 
-    ENV.locationType = 'hash';
+    ENV.APP.rootElement = '#ember-testing';
+    // ENV.locationType = 'hash';
+    // ENV.rootURL = '/ember-quickstart/';
+
+    // ENV.locationType = 'hash';
 
   }
 
