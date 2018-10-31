@@ -11,9 +11,9 @@
 
         {{#each profiles as |profile|}}
             {{#grid.tile class=profile.color as |tile|}}
-            {{#paper-button id=profile.id class="profile-button-team" onClick=(action "openDialog" profile) raised=false}}
+            {{!-- {{#paper-button id=profile.id class="profile-button-team" onClick=(action "openDialog" profile) raised=false}}
 
-            {{/paper-button}}
+            {{/paper-button}} --}}
             <img src={{profile.pic}} class="fit-team">
             {{#tile.footer class="grid-tile-footer"}}
                 <div class="layout-row flex">
@@ -27,7 +27,7 @@
             
             {{/grid.tile}}
 
-            {{#if profile.showDialog}}
+            {{!-- {{#if profile.showDialog}}
                 {{#paper-dialog class="flex-xs-90 flex-gt-xs-50 flex-gt-md-30 no-overflow dialog-size" onClose=(action "closeDialog" profile) parent='#content' origin=(concat '#' profile.id) clickOutsideToClose=true}}
                     {{#paper-toolbar class="profile-toolbar"}}
                         <div class="profile-background {{profile.color}}"></div>
@@ -66,7 +66,7 @@
                             {{/paper-dialog-content}}
                     
                 {{/paper-dialog}}
-            {{/if}}
+            {{/if}} --}}
         {{/each}}
     {{/paper-grid-list}}
 
