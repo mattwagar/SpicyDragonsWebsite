@@ -1,0 +1,17 @@
+
+{{#paper-grid-list
+    cols="1 sm-2 md-4 gt-md-4"
+    rowHeight="gt-md-1:1 2:2"
+    gutter="12px gt-sm-16px" as |grid|}}
+    {{#paper-button raised=true mini=true primary=true href=(href-to "app.blog.archive")}}{{paper-icon "keyboard backspace"}}{{/paper-button}}
+    <h1>{{post.title}}</h1>
+    <h4>Written By {{post.author.displayName}} | {{mmddyy post.published}}</h4>
+    {{#if (gt post.labels.length 0)}}
+        {{paper-divider}}
+        <div class="flex archive-subtitle"> Tags </div>
+        {{tag-list labels=post.labels chosenTag=chosenTag}} {{/if}}
+        {{paper-divider}}
+        
+    {{!-- <div class="flex-80">{{t}}</div> --}}
+    {{htmlString post.content}}
+{{/paper-grid-list}}

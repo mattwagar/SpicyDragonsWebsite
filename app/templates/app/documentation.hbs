@@ -1,0 +1,66 @@
+<div class="page-padding">
+
+<div id="route-header">Documentation</div>
+
+{{#paper-card  class="doc-card" as |card|}}
+{{#paper-tabs primary=true
+    borderBottom=true
+    stretch=true
+    selected=selectedDoc
+    onChange=(action (mut selectedDoc)) as |tabs|}}
+
+        {{#tabs.tab value="scrum"}}
+        <b>Game Design Documents</b>
+        {{/tabs.tab}}
+
+        {{#tabs.tab value="sell"}}
+        <b>Sell Presentations</b>
+        {{/tabs.tab}}
+
+        
+{{/paper-tabs}}
+
+{{#liquid-if (eq selectedDoc "scrum") class="dynamic-animation doc-container" as |current|}}
+    <div class="layout-row flex tab-height">
+        <div class="flex-20 left-doc-tab nav-section">
+            <div>
+
+                {{#paper-button class=(if (eq selectedScrum 'rainbopzPres') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "rainbopzPres")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>RainBopz GDD</b>
+                {{/paper-button}}
+            </div>
+        </div>  
+        <div class="flex page-padding">       
+                {{#if (eq selectedScrum "rainbopzPres")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/document/d/e/2PACX-1vT8yBEFCtvnoBfj7WTPrKZWAvw341N0x4iClSlk564blnBqgRIhKMvHf1pyuK67cpyGZRiGQBebg_r-/pub?embedded=true" link="https://docs.google.com/document/d/1ccsMMZk98P9asunNoFIjlI7apMfIlA-Wr_jbh3Iq9YA/edit?usp=sharing"}}
+                {{/if}}
+        </div>
+              
+    </div>
+{{else if (eq selectedDoc "sell")}}
+    <div class="layout-row flex tab-height">
+        <div class="flex-20 left-doc-tab nav-section">
+            <div>
+
+                {{#paper-button class=(if (eq selectedScrum 'rainbopzPres') 'tab-doc-button md-focused' 'tab-doc-button') primary=true onClick=(action "mutate" "selectedScrum" "rainbopzPres")}}
+                            {{!--{{paper-icon "home" size=48}}--}}
+                            <b>RainBopz Presentation</b>
+                {{/paper-button}}
+            </div>
+        </div>  
+        <div class="flex page-padding">       
+                {{#if (eq selectedScrum "rainbopzPres")}}
+                    {{google-doc title="Onboarding and Workflow" iframe="https://docs.google.com/presentation/d/e/2PACX-1vQljlyVpiak5sGBJ6diX3N1VZqIvYoA6Pqf90hi9cj1eyrFUEdUJHtgEuEwsLmGOuDKjTaW2Xvi4xMW/embed?start=false&loop=false&delayms=3000" link="https://docs.google.com/presentation/d/11s1BZog6lmJp_MfiNCpFTtHtvADxHxLk3-5QUvJBHHM/edit?usp=sharing"}}
+                {{/if}}
+        </div>
+              
+    </div>
+{{/liquid-if}}
+
+{{/paper-card}}
+
+
+{{!--{{google-doc}}--}}
+
+</div>

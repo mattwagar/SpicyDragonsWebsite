@@ -1,0 +1,10 @@
+<div id="route-header">Blog</div>
+
+{{#each allPosts as |post|}}
+    {{blog-card item=post chosenTag=chosenTag}}
+{{/each}} 
+{{#if (not-eq nextPageToken null)}}
+    {{#paper-button raised=true primary=true onClick=(action "loadMore")}}Load More{{/paper-button}}
+{{else if (gt allPosts.length 0)}}
+You've reached the end!
+{{/if}}

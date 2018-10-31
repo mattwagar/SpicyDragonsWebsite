@@ -1,0 +1,12 @@
+{{!--<div class="title">Collegiate Year:</div>--}}
+<h3 class="lessmargin">Collegiate Year:</h3>
+<div class="layout-row layout-wrap year-wrapper">
+    {{#paper-tooltip position="top"}}
+      Currently a <b>{{yearTitle}}</b>
+    {{/paper-tooltip}}
+    {{#each years as |year|}}
+        <div class="year-container {{concat "flex-" (divide 100 maxyear)}}">
+            <div class="year {{if (lte year currentyear) "year-fill" "year-nofill"}}"></div>
+        </div>
+    {{/each}}
+</div>

@@ -1,0 +1,38 @@
+<div class="blog-card layout-column flex">
+    <div class="flex image-button">
+        {{#paper-button class="profile-button" raised=false href=(href-to "app.blog.post" post.id)}} {{/paper-button}}
+        {{img-lazy src=post.imgSrc class="fit-image" alt="smile"}}
+    </div>
+    <div class="fit-post flex post-body layout-column">
+        <div class="flex archive-head">{{post.title}}</div>
+        <div class="flex archive-subhead">{{post.author.displayName}} | {{mmddyy post.published}}</div>
+        {{#if (gt post.labels.length 0)}}
+        {{paper-divider}}
+        <div class="flex archive-subtitle"> Tags </div>
+        {{tag-list labels=post.labels chosenTag=chosenTag}} {{/if}}
+        {{paper-divider}}
+        <div class="flex read-button">
+            {{#paper-button raised=true primary=true class="blog-button" href=(href-to "app.blog.post" post.id)}}Read The Article{{/paper-button}}
+        </div>
+    </div>
+</div>
+<div class="blog-card layout-row">
+
+    <div class="flex image-button">
+        {{#paper-button class="profile-button" raised=false href=(href-to "app.blog.post" post.id)}} {{/paper-button}}
+        {{img-lazy src=post.imgSrc class="fit-image" alt="smile"}}
+    </div>
+    <div class="fit-post flex post-body">
+        <div class="flex archive-head">{{post.title}}</div>
+        <div class="flex archive-subhead">{{post.author.displayName}} | {{mmddyy post.published}}</div>
+
+        {{#if (gt post.labels.length 0)}}
+        <hr>
+        <div class="flex archive-subtitle"> Tags </div>
+        {{tag-list labels=post.labels chosenTag=chosenTag}} {{/if}}
+        <hr>
+        <div class="image-button">
+            {{#paper-button raised=true primary=true class="blog-button" href=(href-to "app.blog.post" post.id)}}Read The Article{{/paper-button}}
+        </div>
+    </div>
+</div>

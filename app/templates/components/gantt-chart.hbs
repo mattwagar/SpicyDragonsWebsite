@@ -1,0 +1,27 @@
+<div class="center-iframe">
+    <object  class="" width="100%" height="100%" data="assets/images/REMembranceGant.pdf"></object>
+</div>
+{{!--<a onClick={{action "fullscreen"}}>{{paper-icon "aspect ratio" size="48" class="doc-logo"}}</a>
+<a href="https://docs.google.com/document/d/1i1B3gqU-kZV7UnRoDYsrx8RmYy0XoVBqAI7DtCDLGmU/edit?usp=sharing"><img class="doc-logo" src="assets/images/google_docs.png"/></a>--}}
+
+
+{{#paper-button fab=true raised=true onClick=(action "fullscreen") class="doc-logo"}}{{paper-icon "aspect ratio" size="36"}}{{/paper-button}}
+
+{{#if showDialog}}
+    {{#paper-dialog class="no-max-size" fullscreen=true onClose=(action "closeDialog") parent='#document' clickOutsideToClose=true}}
+        {{#paper-toolbar}}
+        {{#paper-toolbar-tools}}
+          <h2>Gantt Chart - Week 3</h2>
+          <span class="flex"></span>
+          {{#paper-button iconButton=true onClick=(action "closeDialog")}}{{paper-icon icon="close"}}{{/paper-button}}
+        {{/paper-toolbar-tools}}
+      {{/paper-toolbar}}
+
+                {{#paper-dialog-content class="no-padding pdf-fullscreen"}}
+                    <div class="center-iframe">
+                        <object width="100%" height="100%" data="assets/images/REMembranceGant.pdf"></object>                        
+                    </div>
+                {{/paper-dialog-content}}
+        
+    {{/paper-dialog}}
+{{/if}}

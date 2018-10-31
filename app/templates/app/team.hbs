@@ -1,0 +1,73 @@
+
+    
+<div class="page-padding">
+
+    <div id="route-header">The Team</div>
+
+    {{#paper-grid-list
+        cols="1 sm-2 md-3 gt-md-3"
+        rowHeight="gt-md-1:1 2:2"
+        gutter="12px gt-sm-16px" as |grid|}}
+
+        {{#each profiles as |profile|}}
+            {{#grid.tile class=profile.color as |tile|}}
+            {{#paper-button id=profile.id class="profile-button-team" onClick=(action "openDialog" profile) raised=false}}
+
+            {{/paper-button}}
+            <img src={{profile.pic}} class="fit-team">
+            {{#tile.footer class="grid-tile-footer"}}
+                <div class="layout-row flex">
+                    <div class="flex-initial icon-padding">{{paper-icon profile.icon class="white" size=36}}</div>
+                    <div class="layout-column flex">
+                        <div class="flex"><h3>{{profile.name}}</h3></div>
+                        <div class="flex"><h4>{{profile.role}}</h4></div>
+                    </div>
+                </div>
+            {{/tile.footer}}
+            
+            {{/grid.tile}}
+
+            {{#if profile.showDialog}}
+                {{#paper-dialog class="flex-xs-90 flex-gt-xs-50 flex-gt-md-30 no-overflow dialog-size" onClose=(action "closeDialog" profile) parent='#content' origin=(concat '#' profile.id) clickOutsideToClose=true}}
+                    {{#paper-toolbar class="profile-toolbar"}}
+                        <div class="profile-background {{profile.color}}"></div>
+                        {{#paper-toolbar-tools}}
+
+                        <div class="hidden">
+                            {{#paper-button iconButton=true onClick=(action "closeDialog" profile)}}{{paper-icon icon="close"}}{{/paper-button}}
+                        </div>  
+                        
+                        <div class="profile-name">
+                            <img src={{profile.pic}} class="circular-square">
+                            <img >
+                            <h2>{{profile.name}}</h2>
+                            <h3>{{profile.role}}</h3>
+                        </div>   
+
+                        <div>
+                            {{#paper-button iconButton=true onClick=(action "closeDialog" profile)}}{{paper-icon icon="close"}}{{/paper-button}}
+                        </div>   
+
+                        
+
+                                         
+                        
+                        {{/paper-toolbar-tools}}
+                    {{/paper-toolbar}}
+                            {{#paper-dialog-content class="no-padding"}}
+                            <div id="liquid-profile">
+                            {{#liquid-if (eq selectedProfileTab "aboutme") class="page-padding dynamic-animation" as |current|}}
+                                <h3 class="lessmargin">My Role</h3>
+                                    {{profile.myrole}}
+                                <h3 class="lessmargin">About Me</h3>
+                                    {{profile.aboutme}}
+                            {{/liquid-if}}
+                            </div>
+                            {{/paper-dialog-content}}
+                    
+                {{/paper-dialog}}
+            {{/if}}
+        {{/each}}
+    {{/paper-grid-list}}
+
+</div>

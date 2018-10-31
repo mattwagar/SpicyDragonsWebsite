@@ -1,0 +1,7 @@
+{{#each labels as |label|}}
+    <a href="{{href-to "app.blog.tag" label}}">
+        <div class="chip" class={{if (eq label chosenTag) "active-tag"}}>
+            {{label}}
+        </div>
+    </a>
+{{/each}}
