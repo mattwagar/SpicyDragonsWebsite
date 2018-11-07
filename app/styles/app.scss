@@ -3,7 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Neuton);
 
 // Define desired color palettes.
-$primary: "red";
+$primary: "orange";
 $accent: "deep-purple";
 $warn: "blue-grey";
 
@@ -19,7 +19,7 @@ $warn: "blue-grey";
 }
 
 body {
-  background-color: #101010;
+  background-color: #252320;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
   z-index:-100;
@@ -61,7 +61,7 @@ body {
 }
 
 .left-tab{
-    background-color: #212121;
+    background-color: #423d34;
     box-shadow: 0px 0px 5px black;
     z-index:5;
 }
@@ -73,7 +73,7 @@ body {
     letter-spacing:4px;
     width:100%;
 
-    color: #EF5350 !important
+    color: rgb(239, 152, 80) !important
     
 }
 
@@ -104,12 +104,12 @@ body {
 }
 
 .logo-section{
-    background-color: #777;
+    background-color: #c4a779;
     padding: 10px;
 }
 
 .content-background{
-    background-color:#bbb;
+    background-color:#d5c9b8;
     padding-left:200px;
 }
 
@@ -717,7 +717,7 @@ iframe.game-iframe{
 }
 
 .play-button{
-    background-color: #9a8c51 !important;
+    background-color: #f7b916 !important;
     color: black !important;
     padding: 5px 10px;
     font-size: 1.25em;
@@ -755,7 +755,7 @@ iframe.game-iframe{
 }
 
 .left-doc-tab{
-    background-color: #f2807a;
+    background-color: #ffb445;
 }
 
 .tab-doc-button{
